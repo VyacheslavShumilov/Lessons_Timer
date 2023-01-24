@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="main_background_color">#66733E</color>
-    <color name="start_gradient_color">#FFD600</color>
+    <color name="start_gradient_color">#08A249</color>
     <color name="end_gradient_color">#097282</color>
     <color name="timer_number_background_color">#80CD6D26</color>
     <color name="button_zoom_background_color">#50AB17</color>
@@ -11,13 +11,15 @@
     <color name="view_on_gradient_bg_color">#1CC290</color>
     <color name="dark_icon_color">#2E2F34</color>
     <color name="light_icon_color">#64FEBE</color>
-    <color name="bottom_navigation_bg_color">#010101</color>
-    <color name="bottom_navigation_selected_start_color">#2B4E46</color>
-    <color name="bottom_navigation_selected_end_color">#253A33</color>
+    <color name="bottom_navigation_bg_color">#80010101</color>
+    <color name="bottom_navigation_selected_start_color">#91AB80</color>
+    <color name="bottom_navigation_selected_end_color">#456432</color>
     <color name="bottom_navigation_selected_text_color">#3DC698</color>
     <color name="bottom_navigation_color">#FDFDFB</color>
     <color name="main_text_color">#FDFDFB</color>
-    <color name="secondary_text_color">#67686C</color>
-    <color name="error_text_color">#7D3649</color>
+    <color name="secondary_text_color">#FDFDFB</color>
+    <color name="secondary_text_color2">#0091EA</color>
+    <color name="error_text_color">#BD0A0A</color>
     <color name="line_color">#B91F6753</color>
+    <color name="transparent">#B91F6753</color>
 </resources>

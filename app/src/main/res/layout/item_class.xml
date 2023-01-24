@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:minHeight="@dimen/classes_card_min_height"
     app:cardCornerRadius="@dimen/screen_class_card_radius"
+    android:elevation="5dp"
     android:layout_marginStart="@dimen/screen_padding_horizontal"
     android:layout_marginEnd="@dimen/screen_padding_horizontal">
 

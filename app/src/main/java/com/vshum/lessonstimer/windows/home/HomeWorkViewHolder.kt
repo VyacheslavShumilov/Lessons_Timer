@@ -12,7 +12,7 @@ import java.util.*
 class HomeWorkViewHolder(private val binding: ItemHomeworkBinding): RecyclerView.ViewHolder(binding.root) {
 
     init {
-        val PROC_WIDTH = 0.70 //ширина карточки 70% от ширины экрана
+        val PROC_WIDTH = 0.7 //ширина карточки 70% от ширины экрана
         val display = itemView.context.resources.displayMetrics
         val cardWidth = (display.widthPixels * PROC_WIDTH).toInt()
 
@@ -40,7 +40,7 @@ class HomeWorkViewHolder(private val binding: ItemHomeworkBinding): RecyclerView
                 dateText = res.getQuantityString(R.plurals.expire_homework_timer, countDay.toInt(), countDay)
             }
             else {
-                color = ContextCompat.getColor(context, R.color.secondary_text_color)
+                color = ContextCompat.getColor(context, R.color.secondary_text_color2)
                 dateText = res.getQuantityString(R.plurals.homework_timer, countDay.toInt(), countDay)
             }
 
