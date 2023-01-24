@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.vshum.lessonstimer.data.HomeWork
 import com.vshum.lessonstimer.databinding.ItemHomeworkBinding
+import com.vshum.lessonstimer.windows.home.HomeWorkViewHolder
 
 class  HomeWorkAdapter(private val items: List<HomeWork>): RecyclerView.Adapter<HomeWorkViewHolder>() {
 

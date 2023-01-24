@@ -14,9 +14,9 @@
     <string name="timer_hour">Часы</string>
     <string name="timer_minute">Минуты</string>
     <string name="classes_title">Уроки</string>
-    <string name="exam_question">Вы готовы к экзамену?</string>
+    <string name="exam_question">НАЧАЛО ЭКЗАМЕНА ЧЕРЕЗ:</string>
     <string name="zoom_title">Zoom</string>
-    <string name="homework_title">Домашняя работа</string>
+    <string name="homework_title">Задания</string>
 
     <!-- экран со списком -->
     <string name="list_title">Список</string>

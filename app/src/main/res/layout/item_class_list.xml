@@ -93,6 +93,7 @@
                     <com.vshum.lessonstimer.extensions.view.VerticalTextView
                         android:id="@+id/zoom_title"
                         style="@style/TextTitleStyle"
+                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/zero"
                         android:text="@string/zoom_title"

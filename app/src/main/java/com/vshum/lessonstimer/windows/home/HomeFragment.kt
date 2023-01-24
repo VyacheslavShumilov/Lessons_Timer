@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.util.Log
 import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vshum.lessonstimer.Consts
 import com.vshum.lessonstimer.base.BaseFragment
@@ -97,7 +98,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infla
         Log.d(Consts.TAG_LOG, "renderData -> setHomeWork")
         binding?.let {
             it.homeworkRecyclerview.adapter = HomeWorkAdapter(homework)
-            it.homeworkRecyclerview.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            it.homeworkRecyclerview.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL,  false)
             it.homeworkRecyclerview.itemAnimator = DefaultItemAnimator()
         }
     }

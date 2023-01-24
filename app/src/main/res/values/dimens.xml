@@ -18,8 +18,8 @@
     <dimen name="screen_padding_circle_horizontal">25dp</dimen>
     <dimen name="screen_padding_class_horizontal">60dp</dimen>
     <dimen name="screen_padding_vertical">20dp</dimen>
-    <dimen name="screen_big_card_radius">40dp</dimen>
-    <dimen name="screen_class_card_radius">30dp</dimen>
+    <dimen name="screen_big_card_radius">15dp</dimen>
+    <dimen name="screen_class_card_radius">15dp</dimen>
     <dimen name="timer_number_radius">10dp</dimen>
     <dimen name="title_text_size">18sp</dimen>
     <dimen name="secondary_text_size">14sp</dimen>
