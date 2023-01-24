@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="main_background_color">#66733E</color>
+    <color name="start_gradient_color">#08A249</color>
+    <color name="end_gradient_color">#097282</color>
+    <color name="timer_number_background_color">#80CD6D26</color>
+    <color name="button_zoom_background_color">#50AB17</color>
+    <color name="button_zoom_background_click_color">#970C0C</color>
+    <color name="view_background_color">#B33D731A</color>
+    <color name="view_expire_background_color">#24272E</color>
+    <color name="view_on_gradient_bg_color">#1CC290</color>
+    <color name="dark_icon_color">#2E2F34</color>
+    <color name="light_icon_color">#64FEBE</color>
+    <color name="bottom_navigation_bg_color">#80010101</color>
+    <color name="bottom_navigation_selected_start_color">#91AB80</color>
+    <color name="bottom_navigation_selected_end_color">#456432</color>
+    <color name="bottom_navigation_selected_text_color">#3DC698</color>
+    <color name="bottom_navigation_color">#FDFDFB</color>
+    <color name="main_text_color">#FDFDFB</color>
+    <color name="secondary_text_color">#FDFDFB</color>
+    <color name="secondary_text_color2">#0091EA</color>
+    <color name="error_text_color">#BD0A0A</color>
+    <color name="line_color">#B91F6753</color>
+    <color name="transparent">#B91F6753</color>
 </resources>
