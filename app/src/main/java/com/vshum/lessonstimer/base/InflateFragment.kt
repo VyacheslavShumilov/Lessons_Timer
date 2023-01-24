@@ -1,4 +1,4 @@
-package com.vshum.lessonstimer
+package com.vshum.lessonstimer.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

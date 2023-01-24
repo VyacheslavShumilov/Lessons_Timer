@@ -1,10 +1,10 @@
-package ru.kirea.lessonsandexamtimer.windows.home
+package com.vshum.lessonstimer.windows.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import ru.kirea.lessonsandexamtimer.data.HomeWork
-import ru.kirea.lessonsandexamtimer.databinding.ItemHomeworkBinding
+import com.vshum.lessonstimer.data.HomeWork
+import com.vshum.lessonstimer.databinding.ItemHomeworkBinding
 
 class  HomeWorkAdapter(private val items: List<HomeWork>): RecyclerView.Adapter<HomeWorkViewHolder>() {
 

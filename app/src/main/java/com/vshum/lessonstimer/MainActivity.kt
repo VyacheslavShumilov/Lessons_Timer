@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
 import com.github.terrakok.cicerone.androidx.AppNavigator
+import com.vshum.lessonstimer.databinding.ActivityMainBinding
 import com.vshum.lessonstimer.di.Scopes
 import com.vshum.lessonstimer.navigation.ClassesScreen
 import com.vshum.lessonstimer.navigation.HomeScreen
@@ -16,11 +17,12 @@ import org.koin.java.KoinJavaComponent
 class MainActivity : AppCompatActivity() {
 
     private val scope = KoinJavaComponent.getKoin().createScope<MainActivity>()
-    private var navigatorHolder: NavigatorHolder = scope.get(qualifier = named(Scopes.NAVIGATOR_TAB))
+    private var navigatorHolder: NavigatorHolder =
+        scope.get(qualifier = named(Scopes.NAVIGATOR_TAB))
     private val router: Router = scope.get(qualifier = named(Scopes.ROUTER))
     private val navigator = AppNavigator(this, R.id.bottom_container)
 
-    private val binding: MainActivityBinding by lazy { MainActivityBinding.inflate(layoutInflater) }
+    private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,3 +73,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+}

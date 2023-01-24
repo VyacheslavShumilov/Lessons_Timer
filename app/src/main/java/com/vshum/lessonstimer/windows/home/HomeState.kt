@@ -1,8 +1,8 @@
-package ru.kirea.lessonsandexamtimer.windows.home
+package com.vshum.lessonstimer.windows.home
 
-import ru.kirea.lessonsandexamtimer.data.Classes
-import ru.kirea.lessonsandexamtimer.data.HomeWork
-import ru.kirea.lessonsandexamtimer.data.Tee
+import com.vshum.lessonstimer.data.Classes
+import com.vshum.lessonstimer.data.HomeWork
+import com.vshum.lessonstimer.data.Tee
 
 sealed class HomeState {
     data class TimeToExam(val time: Tee<Long, Long, Long>): HomeState()

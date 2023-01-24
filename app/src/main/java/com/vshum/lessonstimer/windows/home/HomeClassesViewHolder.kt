@@ -2,9 +2,9 @@ package com.vshum.lessonstimer.windows.home
 
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import ru.kirea.lessonsandexamtimer.data.Classes
-import ru.kirea.lessonsandexamtimer.databinding.ItemClassBinding
-import ru.kirea.lessonsandexamtimer.extensions.toDDMMYYY
+import com.vshum.lessonstimer.data.Classes
+import com.vshum.lessonstimer.databinding.ItemClassBinding
+import com.vshum.lessonstimer.extensions.toDDMMYYY
 import java.util.*
 
 class HomeClassesViewHolder(private val binding: ItemClassBinding,

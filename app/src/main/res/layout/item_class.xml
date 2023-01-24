@@ -43,7 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ru.kirea.lessonsandexamtimer.extensions.view.VerticalTextView
+            <com.vshum.lessonstimer.extensions.view.VerticalTextView
                 android:id="@+id/zoom_title"
                 style="@style/TextTitleStyle"
                 android:layout_height="@dimen/zero"

@@ -1,14 +1,14 @@
-package ru.kirea.lessonsandexamtimer.windows.home
+package com.vshum.lessonstimer.windows.home
 
 import android.content.res.Resources
 import android.util.Log
+import com.vshum.lessonstimer.Consts
+import com.vshum.lessonstimer.base.BaseViewModel
+import com.vshum.lessonstimer.data.Classes
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
-import ru.kirea.lessonsandexamtimer.Consts
-import ru.kirea.lessonsandexamtimer.base.BaseViewModel
-import ru.kirea.lessonsandexamtimer.data.Classes
 
 class HomeViewModel(private val service: HomeService) : BaseViewModel<HomeState>() {
     private val job: Job = startTimerToExam()

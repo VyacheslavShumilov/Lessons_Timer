@@ -3,6 +3,8 @@ package com.vshum.lessonstimer.windows.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.vshum.lessonstimer.data.Classes
+import com.vshum.lessonstimer.databinding.ItemClassBinding
 
 class  HomeClassesAdapter(private val items: List<Classes>,
                           private val listener: ClassesAdapterListener):

@@ -1,60 +1,104 @@
 package com.vshum.lessonstimer.windows.home
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.vshum.lessonstimer.R
+import android.content.Intent
+import android.net.Uri
+import android.util.Log
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.vshum.lessonstimer.Consts
+import com.vshum.lessonstimer.base.BaseFragment
+import com.vshum.lessonstimer.data.Classes
+import com.vshum.lessonstimer.data.HomeWork
+import com.vshum.lessonstimer.data.Tee
+import com.vshum.lessonstimer.databinding.FragmentHomeBinding
+import com.vshum.lessonstimer.di.Scopes
+import org.koin.core.qualifier.named
+import org.koin.java.KoinJavaComponent
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private val scope = KoinJavaComponent.getKoin().createScope<HomeFragment>()
+    private val viewModel: HomeViewModel = scope.get(qualifier = named(Scopes.HOME_VIEW_MODEL))
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun afterOnCreateView() {
+        viewModel.getLiveData().observe(viewLifecycleOwner) { renderData(it) }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        //получаем остаточное время до экзамена
+        viewModel.getTimeToExam()
+        //получаем список уроков
+        viewModel.getClasses(requireContext().resources)
+        //получаем список домашней работы
+        viewModel.getHomeWorks()
+    }
+
+    /**
+     * Обработать событие от viewModel.
+     * @param state полученное состояние.
+     */
+    private fun renderData(state: HomeState) {
+        when(state) {
+            //получено время до начала экамена
+            is HomeState.TimeToExam -> setTimeToExam(state.time)
+
+            //получен список домашней работы
+            is HomeState.HomeWorkList -> setHomeWork(state.homework)
+
+            //получен список уроков
+            is HomeState.ClassesList -> setClasses(
+                state.classes,
+                state.currentClass,
+                state.countClasses)
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    /** Сформировать список уроков */
+    private fun setClasses(classes: List<Classes>, currentClass: Int, countClasses: String) {
+        Log.d(Consts.TAG_LOG, "renderData -> setClasses")
+        binding?.let {
+            it.classesViewPager.adapter = HomeClassesAdapter(classes, object: ClassesAdapterListener {
+                override fun buttonZoomClick(zoomUrl: String?) {
+                    zoomUrl?.let { url ->
+                        val zoom = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                        startActivity(zoom)
+                    }
+                }
+            })
+            //выделяем нужный урок
+            it.classesViewPager.currentItem = currentClass
+            //пишем сколько уроков сегодня или в следующий день
+            it.classesCount.text = countClasses
+        }
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    /**
+     * Заполнить остаточное время до экзамена.
+     * @param time связка остатка дней, часов и минут
+     */
+    private fun setTimeToExam(time: Tee<Long, Long, Long>) {
+        Log.d(Consts.TAG_LOG, "renderData -> setTimeToExam")
+        val day = String.format("%02d", time.first)
+        val hour = String.format("%02d", time.second)
+        val min = String.format("%02d", time.third)
+        binding?.let {
+            it.itemTimer.timerDay1.text = day[0].toString()
+            it.itemTimer.timerDay2.text = day[1].toString()
+            it.itemTimer.timerHour1.text = hour[0].toString()
+            it.itemTimer.timerHour2.text = hour[1].toString()
+            it.itemTimer.timerMin1.text = min[0].toString()
+            it.itemTimer.timerMin2.text = min[1].toString()
+        }
+    }
+
+    /** Заполнить список домашней работы */
+    private fun setHomeWork(homework: List<HomeWork>) {
+        Log.d(Consts.TAG_LOG, "renderData -> setHomeWork")
+        binding?.let {
+            it.homeworkRecyclerview.adapter = HomeWorkAdapter(homework)
+            it.homeworkRecyclerview.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            it.homeworkRecyclerview.itemAnimator = DefaultItemAnimator()
+        }
     }
 }

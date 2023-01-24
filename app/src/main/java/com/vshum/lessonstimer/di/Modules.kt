@@ -3,6 +3,14 @@ package com.vshum.lessonstimer.di
 import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
+import com.vshum.lessonstimer.MainActivity
+import com.vshum.lessonstimer.data.repositories.ClassesRepository
+import com.vshum.lessonstimer.data.repositories.MockClassesRepository
+import com.vshum.lessonstimer.windows.classes.ClassesFragment
+import com.vshum.lessonstimer.windows.classes.ClassesViewModel
+import com.vshum.lessonstimer.windows.home.HomeFragment
+import com.vshum.lessonstimer.windows.home.HomeService
+import com.vshum.lessonstimer.windows.home.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module

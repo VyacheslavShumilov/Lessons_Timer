@@ -1,7 +1,13 @@
-package ru.kirea.lessonsandexamtimer.windows.home
+package com.vshum.lessonstimer.windows.home
 
 import android.content.res.Resources
-import android.util.Log
+import com.vshum.lessonstimer.R
+import com.vshum.lessonstimer.data.Classes
+import com.vshum.lessonstimer.data.ClassesNumber
+import com.vshum.lessonstimer.data.HomeWork
+import com.vshum.lessonstimer.data.Tee
+import com.vshum.lessonstimer.data.repositories.ClassesRepository
+import com.vshum.lessonstimer.extensions.getDifferenceDate
 import java.util.*
 
 class HomeService(private val repository: ClassesRepository) {

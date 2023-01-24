@@ -1,13 +1,12 @@
-package ru.kirea.lessonsandexamtimer.windows.home
+package com.vshum.lessonstimer.windows.home
 
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import ru.kirea.lessonsandexamtimer.R
-import ru.kirea.lessonsandexamtimer.data.HomeWork
-import ru.kirea.lessonsandexamtimer.databinding.ItemHomeworkBinding
-import ru.kirea.lessonsandexamtimer.extensions.getDifferenceDate
-import ru.kirea.lessonsandexamtimer.extensions.toDDMMYYY
+import com.vshum.lessonstimer.R
+import com.vshum.lessonstimer.data.HomeWork
+import com.vshum.lessonstimer.databinding.ItemHomeworkBinding
+import com.vshum.lessonstimer.extensions.getDifferenceDate
 import java.util.*
 
 class HomeWorkViewHolder(private val binding: ItemHomeworkBinding): RecyclerView.ViewHolder(binding.root) {

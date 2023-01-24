@@ -11,10 +11,14 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vshum.lessonstimer.R
 import com.vshum.lessonstimer.base.BaseFragment
+import com.vshum.lessonstimer.data.Classes
+import com.vshum.lessonstimer.databinding.FragmentClassesBinding
+import com.vshum.lessonstimer.di.Scopes
+import com.vshum.lessonstimer.windows.home.ClassesAdapterListener
 import org.koin.core.qualifier.named
 import org.koin.java.KoinJavaComponent
 
-class ClassesFragment: BaseFragment<ClassesFragmentBinding>(ClassesFragmentBinding::inflate) {
+class ClassesFragment: BaseFragment<FragmentClassesBinding>(FragmentClassesBinding::inflate) {
 
     private val scope = KoinJavaComponent.getKoin().createScope<ClassesFragment>()
     private val viewModel: ClassesViewModel = scope.get(qualifier = named(Scopes.CLASSES_VIEW_MODEL))
