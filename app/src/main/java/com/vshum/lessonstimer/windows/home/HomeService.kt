@@ -2,14 +2,6 @@ package ru.kirea.lessonsandexamtimer.windows.home
 
 import android.content.res.Resources
 import android.util.Log
-import ru.kirea.lessonsandexamtimer.Consts
-import ru.kirea.lessonsandexamtimer.R
-import ru.kirea.lessonsandexamtimer.data.Classes
-import ru.kirea.lessonsandexamtimer.data.ClassesNumber
-import ru.kirea.lessonsandexamtimer.data.HomeWork
-import ru.kirea.lessonsandexamtimer.data.Tee
-import ru.kirea.lessonsandexamtimer.data.repositories.ClassesRepository
-import ru.kirea.lessonsandexamtimer.extensions.getDifferenceDate
 import java.util.*
 
 class HomeService(private val repository: ClassesRepository) {
