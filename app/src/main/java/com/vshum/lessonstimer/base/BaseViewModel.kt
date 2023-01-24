@@ -1,9 +1,10 @@
-package com.vshum.lessonstimer
+package com.vshum.lessonstimer.base
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.vshum.lessonstimer.Consts
 import kotlinx.coroutines.*
 
 /** Общая ViewModel с основной логикой инициализации */
