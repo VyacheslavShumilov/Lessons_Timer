@@ -5,6 +5,11 @@ import android.os.Bundle
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
 import com.github.terrakok.cicerone.androidx.AppNavigator
+import com.vshum.lessonstimer.di.Scopes
+import com.vshum.lessonstimer.navigation.ClassesScreen
+import com.vshum.lessonstimer.navigation.HomeScreen
+import com.vshum.lessonstimer.navigation.ListScreen
+import com.vshum.lessonstimer.navigation.TagScreen
 import org.koin.core.qualifier.named
 import org.koin.java.KoinJavaComponent
 
